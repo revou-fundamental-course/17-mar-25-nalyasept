@@ -1,14 +1,37 @@
-console.log('JavaScript is working!');
-
-// Form Validation
-function validateForm() {
-    const sisiInput = document.getElementById('sisi-input');
-
-    // Check if the input is empty
-    if (sisiInput.value == '') {
-        alert('Sisi harus diisi!');
-    } else {
-        // Process the Calculation
-        console.log(sisiInput.value);
+function hitungLuas() {
+    let sisi = document.getElementById('sisi-luas').value;
+    if (sisi === "" || sisi <= 0) {
+        alert("Masukkan sisi yang valid!");
+        return;
     }
+    let luas = sisi * sisi;
+
+    document.querySelectorAll('.sisi-value').forEach(el => {
+        el.innerText = sisi;
+    });
+
+    document.getElementById('hasil-luas').innerText = luas;
+}
+
+function resetForm() {
+    document.getElementById('sisi-luas').value = "";
+    document.getElementById('hasil-luas').innerText = "-";
+}
+
+function hitungKeliling() {
+    let sisi = document.getElementById('sisi-keliling').value;
+        if (sisi === "" || sisi <= 0) {
+            alert("Masukkan sisi yang valid!");
+        return;
+        }
+    let keliling = 4 * sisi;
+
+    document.querySelector('.sisi-keliling').innerText = sisi;
+    document.getElementById('hasil-keliling').innerText = keliling;
+}
+
+function resetKeliling() {
+    document.getElementById('sisi-keliling').value = "";
+    document.querySelector('.sisi-keliling').innerText = "-";
+    document.getElementById('hasil-keliling').innerText = "-";
 }
