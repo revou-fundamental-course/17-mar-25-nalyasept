@@ -1,65 +1,75 @@
-g/* Ini CSS External */
-
 body {
-    font-family: fantasy;
-}
-
-.main-header>h1 {
-    margin: 0px;
-    background-color: aquamarine;
-    padding: 24px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
     text-align: center;
 }
-
-main {
-    background-color: cornsilk;
-    padding: 16px;
-    text-align: center;
-}
-
-.nav-fitur {
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-fitur>a {
+.main-header {
+    background: #007bff;
     color: white;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    width: 50%;
-    align-self: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
 }
-
-.nav-fitur-non-active {
-    background-color: darkcyan;
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
 }
-
+.nav-fitur {
+    margin: 10px 0;
+}
+.nav-fitur a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+}
 .nav-fitur-active {
-    background-color: cornflowerblue;
+    background: #007bff;
 }
-
-.section-header {
-    background-color: aquamarine;
-    padding: 16px;
+.nav-fitur-non-active {
+    background: #6c757d;
 }
-
-.section-image {
-    background-image: url(../assets/persegi.png);
-    width: 200px;
-    height: 100px;
-    justify-self: center;
-    background-size: cover;
-    background-position: center;
+.header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
-
-.calculate-content {
-    border: 1px solid;
-    height: 300px;
+.content img {
+    width: 150px;
+    margin: 10px 0;
 }
-
-section {
-    margin-top: 16px;
-    margin-bottom: 16px;
+input {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+button {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-hitung {
+    background: #007bff;
+}
+.btn-reset {
+    background: #f39c12;
+    margin-top: 5px;
 }
 
 footer {
