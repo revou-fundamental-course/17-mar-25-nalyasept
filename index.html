@@ -5,63 +5,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katik - Nabila</title>
-
-    <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css">
+   
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="main-header">
-        <h1>Katik (Kalkulator Matematik)</h1>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Welcome Speech -->
-        <header>
-            <h1>Welcome to Katik</h1>
-        </header>
-        <p>Hai sobat selamat datang di katik!</p>
-        <p>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar </p>
-
-        <!-- Navigasi Fitur -->
+    <div class="main-header">Katik Kalkulator Matematik</div>
+    <div class="container">
+        <h2>Welcome to Katik</h2>
+        <p>Hai Sobat, Selamat datang di Katik :)<br>
+        Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
         <div class="nav-fitur">
-            <a href="" class="nav-fitur-active">Persegi</a>
-            <a href="" class="nav-fitur-non-active">Persegi Panjang</a>
+            <a href="#" class="nav-fitur-active">Persegi</a>
+            <a href="#" class="nav-fitur-non-active">P. Panjang</a>
         </div>
+    </div>
+    <div class="container">
+        <div class="header">Luas Persegi</div>
+        <div class="content">
+            <img src="assets/persegi.png" alt="Persegi">
+            <p>Rumus Luas Persegi yaitu :</p>
+            <p>L = S × S</p>
+            <p>Di mana :</p>
+            <p>L = Luas</p>
+            <p>S = Sisi</p>
+        </div>
+        <h2>Hitung Luas Persegi</h2>
+        <input type="number" id="sisi-luas" placeholder="Nilai Sisi">
+        <button class="btn-hitung" onclick="hitungLuas()">Hitung</button>
+        <button class="btn-reset" onclick="resetForm()">Reset</button>
+        <p>L = S x S</p>
+        <p>L = <span class="sisi-value">-</span> x <span class="sisi-value">-</span></p>
+        <p>L = <span id="hasil-luas">-</span></p>
+    </div>
 
-        <!-- Section Luas -->
-        <section>
-            <header class="section-header">
-                <h1>Luas Persegi</h1>
-            </header>
+    <div class="container">
+        <div class="header">Keliling Persegi</div>
+        <div class="content">
+            <img src="assets/persegi.png" alt="Persegi">
+            <p>Rumus Luas Persegi yaitu :</p>
+            <p>K = 4 × S</p>
+            <p>Di mana :</p>
+            <p>K = Keliling</p>
+            <p>S = Sisi</p>
+        </div>
+        <h2>Hitung Keliling Persegi</h2>
+        <input type="number" id="sisi-keliling" placeholder="Masukkan nilai sisi">
+        <button class="btn-hitung" onclick="hitungKeliling()">Hitung</button>
+        <button class="btn-reset" onclick="resetKeliling()">Reset</button>
+        <p>K = 4 × S</p>
+        <p>K = 4 × <span class="sisi-keliling">-</span></p>
+        <p>K = <span id="hasil-keliling">-</span></p>
+    </div>
 
-            <!-- Gambar Luas -->
-            <div class="section-image"></div>
+<script>
+function hitungLuas() {
+    let sisi = document.getElementById('sisi-luas').value;
+    if (sisi === "" || sisi <= 0) {
+        alert("Masukkan sisi yang valid!");
+        return;
+    }
+    let luas = sisi * sisi;
 
-            <!-- Konten Perhitungan -->
-            <div class="calculate-content"></div>
-        </section>
+    document.querySelectorAll('.sisi-value').forEach(el => {
+        el.innerText = sisi;
+    });
 
-        <!-- Section Keliling -->
-        <section>
-            <header class="section-header">
-                <h1>Keliling Persegi</h1>
-            </header>
+    document.getElementById('hasil-luas').innerText = luas;
+}
 
-            <!-- Gambar Keliling -->
-            <div class="section-image"></div>
+function resetForm() {
+    document.getElementById('sisi-luas').value = "";
+    document.getElementById('hasil-luas').innerText = "-";
+}
 
-            <!-- Konten Perhitungan -->
-            <div class="calculate-content"></div>
-        </section>
-    </main>
+function hitungKeliling() {
+            let sisi = document.getElementById('sisi-keliling').value;
+            if (sisi === "" || sisi <= 0) {
+                alert("Masukkan sisi yang valid!");
+                return;
+            }
+            let keliling = 4 * sisi;
 
-    <!-- Footer -->
-    <footer>
-        <p>Made by Nabila@2025</p>
-    </footer>
+         
+            document.querySelector('.sisi-keliling').innerText = sisi;
+            document.getElementById('hasil-keliling').innerText = keliling;
+        }
+
+        function resetKeliling() {
+            document.getElementById('sisi-keliling').value = "";
+            document.querySelector('.sisi-keliling').innerText = "-";
+            document.getElementById('hasil-keliling').innerText = "-";
+        }
+</script>
+
+<footer>
+    <p>Made by Nabila@2025</p>
+</footer>
+
 </body>
 
 </html>
